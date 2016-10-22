@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!--
+    Created on : Oct 22, 2016, 7:50:43 PM
+    Author     : premy
+-->
+<html>
+  <head>
+    <title>Sudoku solver</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="jquery-3.1.1.js" type="text/javascript"></script>
+    <script src="scripts.js" type="text/javascript"></script>
+    <link href="styles.css" rel="stylesheet" type="text/css"/>
+  </head>
+  <body>
+    <div class="outland" id="outland"> 
+    <div>
+    <div id="header" class="header">
+      <div id="title" class ="title">
+        SOLVER
+      </div>
+      
+      <div id="Button" class ="button" onclick="solve()">
+        I agree the only true god is Přemysl Šťastný.
+      </div>
+      
+    </div>
+    <div class="grid" id="grid">
+      <div class="hline0"></div>
+      <div class="vline0"></div>
+      <div class="hline1"></div>
+      <div class="vline1"></div>
+      
+      <table id="table">
+        <tr>
+          <td>
+            <input type="text" onchange="user_change(event)" id="n1" />
+          </td>
+          <td>
+            <input type="text" onchange="user_change(event)" id="n2"/>
+          </td>
+          <td>
+            <input type="text" onchange="user_change(event)" id="n3"/>
+          </td>
+          <td>
+            <input type="text" onchange="user_change(event)" id="n4"/>
+          </td>
+          <td>
+            <input type="text" onchange="user_change(event)" id="n5"/>
+          </td>
+          <td>
+            <input type="text" onchange="user_change(event)" id="n6"/>
+          </td>
+          <td>
+            <input type="text" onchange="user_change(event)" id="n7"/>
+          </td>
+          <td>
+            <input type="text" onchange="user_change(event)" id="n8"/>
+          </td>
+          <td>
+            <input type="text" onchange="user_change(event)" id="n9"/>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <input type="text" onchange="user_change(event)" id="n10"/>
+          </td>
+          <td>
+            <input type="text" onchange="user_change(event)" id="n11"/>
+          </td>
+          <td>
+            <input type="text" onchange="user_change(event)" id="n12"/>
+          </td>
+          <td>
+            <input type="text" onchange="user_change(event)" id="n13"/>
+          </td>
+          <td>
+            <input type="text" onchange="user_change(event)" id="n14"/>
+          </td>
+          <td>
+            <input type="text" onchange="user_change(event)" id="n15"/>
+          </td>
+          <td>
+            <input type="text" onchange="user_change(event)" id="n16"/>
+          </td>
+          <td>
+            <input type="text" onchange="user_change(event)" id="n17"/>
+          </td>
+          <td>
+            <input type="text" onchange="user_change(event)" id="n18"/>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <input type="text" onchange="user_change(event)" id="n19"/>
+          </td>
+          <td>
+            <input type="text" onchange="user_change(event)" id="n20"/>
+          </td>
+          <td>
+            <input type="text" onchange="user_change(event)" id="n21"/>
+          </td>
+          <td>
+            <input type="text" onchange="user_change(event)" id="n22"/>
+          </td>
+          <td>
+            <input type="text" onchange="user_change(event)" id="n23"/>
+          </td>
+          <td>
+            <input type="text" onchange="user_change(event)" id="n24"/>
+          </td>
+          <td>
+            <input type="text" onchange="user_change(event)" id="n25"/>
+          </td>
+          <td>
+            <input type="text" onchange="user_change(event)" id="n26"/>
+          </td>
+          <td>
+            <input type="text" onchange="user_change(event)" id="n27"/>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <input type="text" onchange="user_change(event)" id="n28"/>
+          </td>
+          <td>
+            <input type="text" onchange="user_change(event)" id="n29"/>
+          </td>
+          <td>
+            <input type="text" onchange="user_change(event)" id="n30"/>
+          </td>
+          <td>
+            <input type="text" onchange="user_change(event)" id="n31"/>
+          </td>
+          <td>
+            <input type="text" onchange="user_change(event)" id="n32"/>
+          </td>
+          <td>
+            <input type="text" onchange="user_change(event)" id="n33"/>
+          </td>
+          <td>
+            <input type="text" onchange="user_change(event)" id="n34"/>
+          </td>
+          <td>
+            <input type="text" onchange="user_change(event)" id="n35"/>
+          </td>
+          <td>
+            <input type="text" onchange="user_change(event)" id="n36"/>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <input type="text" onchange="user_change(event)" id="n37"/>
+          </td>
+          <td>
+            <input type="text" onchange="user_change(event)" id="n38"/>
+          </td>
+          <td>
+            <input type="text" onchange="user_change(event)" id="n39"/>
+          </td>
+          <td>
+            <input type="text" onchange="user_change(event)" id="n40"/>
+          </td>
+          <td>
+            <input type="text" onchange="user_change(event)" id="n41"/>
+          </td>
+          <td>
+            <input type="text" onchange="user_change(event)" id="n42"/>
+          </td>
+          <td>
+            <input type="text" onchange="user_change(event)" id="n43"/>
+          </td>
+          <td>
+            <input type="text" onchange="user_change(event)" id="n44"/>
+          </td>
+          <td>
+            <input type="text" onchange="user_change(event)" id="n45"/>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <input type="text" onchange="user_change(event)" id="n46"/>
+          </td>
+          <td>
+            <input type="text" onchange="user_change(event)" id="n47"/>
+          </td>
+          <td>
+            <input type="text" onchange="user_change(event)" id="n48"/>
+          </td>
+          <td>
+            <input type="text" onchange="user_change(event)" id="n49"/>
+          </td>
+          <td>
+            <input type="text" onchange="user_change(event)" id="n50"/>
+          </td>
+          <td>
+            <input type="text" onchange="user_change(event)" id="n51"/>
+          </td>
+          <td>
+            <input type="text" onchange="user_change(event)" id="n52"/>
+          </td>
+          <td>
+            <input type="text" onchange="user_change(event)" id="n53"/>
+          </td>
+          <td>
+            <input type="text" onchange="user_change(event)" id="n54"/>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <input type="text" onchange="user_change(event)" id="n55"/>
+          </td>
+          <td>
+            <input type="text" onchange="user_change(event)" id="n56"/>
+          </td>
+          <td>
+            <input type="text" onchange="user_change(event)" id="n57"/>
+          </td>
+          <td>
+            <input type="text" onchange="user_change(event)" id="n58"/>
+          </td>
+          <td>
+            <input type="text" onchange="user_change(event)" id="n59"/>
+          </td>
+          <td>
+            <input type="text" onchange="user_change(event)" id="n60"/>
+          </td>
+          <td>
+            <input type="text" onchange="user_change(event)" id="n61"/>
+          </td>
+          <td>
+            <input type="text" onchange="user_change(event)" id="n62"/>
+          </td>
+          <td>
+            <input type="text" onchange="user_change(event)" id="n63"/>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <input type="text" onchange="user_change(event)" id="n64"/>
+          </td>
+          <td>
+            <input type="text" onchange="user_change(event)" id="n65"/>
+          </td>
+          <td>
+            <input type="text" onchange="user_change(event)" id="n66"/>
+          </td>
+          <td>
+            <input type="text" onchange="user_change(event)" id="n67"/>
+          </td>
+          <td>
+            <input type="text" onchange="user_change(event)" id="n68"/>
+          </td>
+          <td>
+            <input type="text" onchange="user_change(event)" id="n69"/>
+          </td>
+          <td>
+            <input type="text" onchange="user_change(event)" id="n70"/>
+          </td>
+          <td>
+            <input type="text" onchange="user_change(event)" id="n71"/>
+          </td>
+          <td>
+            <input type="text" onchange="user_change(event)" id="n72"/>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <input type="text" onchange="user_change(event)" id="n73"/>
+          </td>
+          <td>
+            <input type="text" onchange="user_change(event)" id="n74"/>
+          </td>
+          <td>
+            <input type="text" onchange="user_change(event)" id="n75"/>
+          </td>
+          <td>
+            <input type="text" onchange="user_change(event)" id="n76"/>
+          </td>
+          <td>
+            <input type="text" onchange="user_change(event)" id="n77"/>
+          </td>
+          <td>
+            <input type="text" onchange="user_change(event)" id="n78"/>
+          </td>
+          <td>
+            <input type="text" onchange="user_change(event)" id="n79"/>
+          </td>
+          <td>
+            <input type="text" onchange="user_change(event)" id="n80"/>
+          </td>
+          <td>
+            <input type="text" onchange="user_change(event)" id="n81"/>
+          </td>
+        </tr>
+        
+        
+        
+      </table>
+    
+    </div>
+  </body>
+</html>
