@@ -1,7 +1,7 @@
 # Sudoku-solver
 HTML5 sudoku solver
 
-This project was done in 2016. 
+This project was done in 2016 in order to get angry my high school teacher. 
 It worked under Chrome and Firefox, but there are many problems with up-to-date broswers. 
 
 ## Getting started
